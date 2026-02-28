@@ -645,6 +645,7 @@ header ul a:hover{
     position: absolute;
     top: 10%;
     left: 40%;
+    margin-bottom: 40px;
 }
 
 .social-box {
@@ -1001,6 +1002,32 @@ header ul a:hover{
         top: 5%;
     }
 
+    .skills-box{
+        gap: 40px;
+    }
+
+    .Designer{
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .Designer h1{
+        margin-bottom: 15px;
+    }
+
+    .coder{
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .coder h1{
+        margin-bottom: 15px;
+    }
+
+    .slider{
+        margin-top: 50px;
+    }
+
 
 
     .info-cards{
@@ -1077,20 +1104,28 @@ header ul a:hover{
     .Designer{
         top: 15%;
         left: 18%;
+        padding: 20px;
+        margin-bottom: 30px;
     }
 
     .Designer h1{
-        margin-bottom: 0;
+        margin-bottom: 15px;
         margin-top: 70px;
     }
 
     .coder{
         top: 50%;
         left: 18%;
+        padding: 20px;
+        margin-bottom: 30px;
     }
 
     .coder h1{
-        margin-bottom: 0;
+        margin-bottom: 15px;
+    }
+
+    .slider{
+        margin-top: 40px;
     }
 
     .slider .list .item img{
@@ -1189,10 +1224,22 @@ header ul a:hover{
     .skills-box{
         height: 120vh;
         margin-right: 30px;
+        gap: 30px;
+    }
+
+    .Designer{
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .coder{
+        padding: 15px;
+        margin-bottom: 20px;
     }
 
     .slider{
         bottom: 0%;
+        margin-top: 50px;
     }
 
     .contact-section{
