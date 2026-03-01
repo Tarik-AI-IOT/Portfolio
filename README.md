@@ -10,7 +10,9 @@ Welcome to my personal portfolio website! This is the place where I showcase my 
 
 ## About Me
 
-Hi, I'm **Tarik Antar**. I have hands-on experience in building **web, mobile, and AI-powered solutions**. My background combines **full-stack development**, **IoT integration**, and **AI programming**, allowing me to design **scalable, intelligent, and interactive systems**.
+Hi, I'm **Tarik Antar**. I have hands-on experience in building **web, mobile, and AI-powered solutions**. My background combine **full-stack development with IoT, embedded systems**, and **AI programming**, allowing me to design **scalable, intelligent, and interactive solutions** that bridge software and hardware.
+
+
 
 This portfolio demonstrates my skills, projects, and ongoing work. I continuously update it as I complete new projects or enhance existing ones, so some of my latest work may not yet be live on the website — but it’s always in progress!
 
@@ -20,11 +22,12 @@ This portfolio demonstrates my skills, projects, and ongoing work. I continuousl
 
 I work with a wide range of languages, frameworks, and tools, including:
 
-- **Frontend:** HTML, CSS, JavaScript, React  
+- **Frontend:** HTML, CSS, JavaScript, React, Bootstrap, WordPress
 - **Backend:** Node.js, Express.js, REST APIs  
 - **Databases:** MongoDB, MySQL, Supabase  
 - **Cloud & DevOps:** AWS, Docker  
-- **AI & IoT:** Python, Machine Learning, IoT device integration  
+- **AI & IoT:** Python, Machine Learning, IoT device integration, C++, Arduino, Raspberry Pi, Linux
+- **Design & Dev Tools:** Figma, Postman, VS Code  
 
 ---
 
