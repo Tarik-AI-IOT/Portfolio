@@ -22,14 +22,14 @@
             </div>
 
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#aboutSection">About</a></li>
+                <li><a href="#myskills">Skills</a></li>
+                <li><a href="#myproject">Projects</a></li>
             </ul>
 
             <div class="box-icons">
                 <p><i class='bx bxl-youtube'></i></p>
-                <p><i class='bx bxl-github'></i></p>
+                <p><i class='bx bxl-github' onclick="window.open('https://github.com/Tarik-AI-IOT','_blank')"></i></p>
                 <p><i class='bx bxl-linkedin-square'></i></p>
             </div>
 
@@ -71,7 +71,7 @@
 
                 <p>I'm a full-stack developer building web, mobile and AI solutions. Explore my projects and technical skills.</p>
 
-                <button><i class='bx bx-send' ></i> Contact Me</button>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"><i class='bx bx-send' ></i> Contact Me</button>
             </div>
             
             <div class="skills-video-box " >
@@ -81,7 +81,7 @@
             <div class="scroll-down"></div>
         </section>
 
-        <section class="info-section">
+        <section id="aboutSection" class="info-section">
             <h1 class="section-title autoDisplay">Hello,There👋</h1>
             <div class="info-cards">
                 <div class="card">
@@ -103,7 +103,7 @@
                     <p>Based in Montreal, Canada. Available for remote and on-site opportunities.</p>
                     <video src="videos/glob.mp4" autoplay loop muted plays-inline></video>
 
-                    <button><i class='bx bx-send'></i> Contact Me</button>
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"><i class='bx bx-send' ></i> Contact Me</button>
                 </div>
 
                 <div class="card">
@@ -115,7 +115,7 @@
             </div>
         </section>
 
-        <section class="my-project">
+        <section id="myproject" class="my-project">
             <h1 class="section-title autoDisplay">My Projects 👨‍💻</h1>
             <div class="project-card">
                 <div class="project-vidbox autoBlur" >
@@ -131,12 +131,12 @@
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo2" src="videos/project2.mp4"></video>
+                    <video muted loop id="projectVideo2" src="videos/project6.mp4"></video>
                 </div>
                 <div class="project-info fadein-left">
-                    <h1> Modern <span class="gradient">Portfolio</span> Website </h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam modi voluptates assumenda omnis impedit ipsa veritatis soluta earum minima consequatur.</p>
-                    <button><i class='bx bx-link-external' ></i> Website</button>
+                    <h1>FormaX <span class="gradient">Learning</span> Platform</h1>
+                    <p>FormaX provides comprehensive online courses to help students learn web development, modern technologies, and software practices. Each course is carefully designed to ensure clarity, interactivity, and a practical approach for learners of all levels.</p>
+                    <button onclick="window.open('https://formax-elearning.vercel.app/', '_blank')"><i class='bx bx-link-external' ></i> Website</button>
                 </div>
             </div>
 
@@ -154,7 +154,7 @@
         </section>
 
         
-        <section class="skills-section">
+        <section id="myskills" class="skills-section">
             <h1 class="section-title autoDisplay">
                 My Skills 💪
             </h1>
@@ -190,7 +190,7 @@
             </div>
         </section>
 
-        <section class="contact-section ">
+        <section id="contact" class="contact-section ">
             <h1 class="section-title autoDisplay">Let's talk😊</h1>
 
             <div class="social-box autoBlur">
@@ -224,7 +224,7 @@
             <h1>© 2026 Tarik Antar. All rights reserved.</h1>
             <div class="box-icons">
                 <p><i class='bx bxl-youtube'></i></p>
-                <p><i class='bx bxl-github'></i></p>
+                <p><i class='bx bxl-github' onclick="window.open('https://github.com/Tarik-AI-IOT','_blank')"></i></p>
                 <p><i class='bx bxl-linkedin-square'></i></p>
             </div>
         </section>
