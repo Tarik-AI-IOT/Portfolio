@@ -831,6 +831,32 @@ header ul a:hover{
     box-shadow: 0 0 18px rgba(114, 161, 222, 0.62);
 }
 
+.contact-status{
+    margin: 4px 0 0;
+    min-height: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.contact-status.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-status.success{
+    color: #90ffd5;
+    text-shadow: 0 0 8px rgba(144, 255, 213, 0.25);
+}
+
+.contact-status.error{
+    color: #ffb8c3;
+    text-shadow: 0 0 8px rgba(255, 184, 195, 0.18);
+}
+
 @media screen and (min-width: 701px){
     .contact-section .social-box,
     .contact-section .contact-box{
