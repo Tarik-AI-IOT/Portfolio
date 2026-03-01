@@ -3,6 +3,7 @@ body{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
+    overflow-x: hidden;
 }
 
 html{
@@ -12,11 +13,12 @@ html{
 .container{
     position: relative;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: clamp(70px, 8vw, 120px);
     background-color: #001f7c38;
 }
 
@@ -127,7 +129,10 @@ header ul a:hover{
     position: relative;
     display: flex;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 70px;
+    box-sizing: border-box;
     align-items: center;
     justify-content: space-between;
 }
@@ -142,7 +147,8 @@ header ul a:hover{
     padding: 8px 5px;
     border-radius: 50px;
     border: 1px solid #72a1de94;
-    width: 240px;
+    width: max-content;
+    max-width: 100%;
     background-color: #2200493d;
     box-shadow: 0 0 5px #72a1de84;
 }
@@ -270,7 +276,7 @@ header ul a:hover{
 
 .info-cards{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     width: 100%;
     height: 100%;
@@ -282,8 +288,9 @@ header ul a:hover{
     align-items:flex-start;
     justify-content: center;
     position: relative;
-    width: auto;
+    width: 100%;
     height: 40vh;
+    min-height: 320px;
     overflow: hidden;
     border: 1px solid gray;
     background-color: #080020b7;
@@ -297,8 +304,14 @@ header ul a:hover{
     bottom: 40%;
     left: 5%;
     font-size: 25px;
+    max-width: 90%;
+    line-height: 1.2;
     z-index: 1;
     color: lightgray;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .card p{
@@ -306,10 +319,14 @@ header ul a:hover{
     bottom: 3%;
     left: 5%;
     z-index: 1;
-    max-width: 300px;
+    max-width: min(90%, 320px);
     color: gray;
     font-size: 13px;
     line-height: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
 }
 
 .card img{
@@ -367,7 +384,7 @@ header ul a:hover{
 }
 
 .card:nth-child(4) p{
-    max-width: 650px;
+    max-width: min(90%, 650px);
 }
 
 .card:nth-child(4) h1{
@@ -378,21 +395,22 @@ header ul a:hover{
 .my-project{
     display: flex;
     flex-direction: column;
-    gap: 10%;
+    gap: 60px;
     align-items: center;
     position: relative;
     width: 80%;
-    height: 100vh;
-    margin-top: 200px;
-    margin-bottom: 700px;
+    height: auto;
+    margin-top: 150px;
+    margin-bottom: 120px;
 }
 
 .project-card {
     display: flex;
     width: 100%;
-    height: 40%;
+    min-height: 320px;
+    height: auto;
     align-items: center;
-    gap: 10%;
+    gap: 6%;
     justify-content: center;
 }
 
@@ -400,12 +418,14 @@ header ul a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    flex: 1 1 420px;
+    width: 100%;
+    max-width: 560px;
     mix-blend-mode:exclusion;
     position: relative;
     cursor: pointer;
     transition: 0.5s;
-    min-width: 400px;
+    min-width: 0;
 
 }
 
@@ -426,25 +446,26 @@ header ul a:hover{
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    width: 50%;
-    padding-left: 10%;
+    flex: 1 1 320px;
+    width: 100%;
+    padding-left: clamp(0px, 2vw, 35px);
 }
 
 .project-info h1{
-    width: 90%;
+    width: 100%;
     font-size: 25px;
     font-weight: bold;
-    text-wrap: nowrap;
+    text-wrap: balance;
     margin-top: 0;
     margin-bottom: 10px;
-    max-width: 450px;
+    max-width: 520px;
 }
 
 .project-info p{
-    width: 90%;
-    max-width: 400px;
-    min-width: 300px;
-    margin-bottom: 50px;
+    width: 100%;
+    max-width: 520px;
+    min-width: 0;
+    margin-bottom: 30px;
     margin-top: 0;
 }
 
@@ -516,28 +537,41 @@ header ul a:hover{
 
 .skills-box{
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
+    height: auto;
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+        "image image"
+        "designer coder"
+        "slider slider";
     align-items: start;
     justify-content: center;
     mix-blend-mode:lighten;
     opacity: 0.7;
+    gap: 30px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
 }
 
 .skills-image{
-    width: 70%;
+    grid-area: image;
+    width: min(70%, 900px);
+    justify-self: center;
     mix-blend-mode:difference;
 }
 
 .Designer{
-    position: absolute;
+    grid-area: designer;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: start;
-    top: 25%;
-    left: 5%;
-    max-width: 300px;
+    top: auto;
+    left: auto;
+    max-width: 380px;
+    justify-self: start;
 }
 
 .Designer h1{
@@ -552,13 +586,15 @@ header ul a:hover{
 
 
 .coder{
-    position: absolute;
+    grid-area: coder;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: start;
-    top: 25%;
-    right: 5%;
-    max-width: 300px;
+    top: auto;
+    right: auto;
+    max-width: 380px;
+    justify-self: end;
 }
 
 .coder h1{
@@ -581,10 +617,12 @@ header ul a:hover{
 /* SLIDER  */
 
 .slider{
-    position: absolute;
-    bottom: 5%;
-    right: 20%;
-    width: 60%;
+    grid-area: slider;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
     height: var(--height);
     overflow: hidden;
     mask-image: linear-gradient(
@@ -595,6 +633,7 @@ header ul a:hover{
     );
     mix-blend-mode:difference;
     opacity: 0.7;
+    margin-top: 10px;
 }
 .slider .list{
     display: flex;
@@ -633,32 +672,39 @@ header ul a:hover{
   /* CONTACT SECTION */
 .contact-section{
     width: 80%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
-    gap: 10%;
+    gap: clamp(30px, 6vw, 90px);
     align-items: center;
     position: relative;
+    padding: 140px 0 80px;
+    box-sizing: border-box;
 }
 
 .contact-section h1{
     position: absolute;
-    top: 10%;
-    left: 40%;
-    margin-bottom: 40px;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
 }
 
 .social-box {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    width: 100%;
+    max-width: 420px;
 }
 
 .social-box a{
     color: lightgray;
     text-decoration: none;
     font-size: 20px;
-    text-wrap: nowrap;
+    text-wrap: pretty;
+    white-space: normal;
 }
 
 .social-box i{
@@ -678,15 +724,21 @@ header ul a:hover{
     margin-bottom: 5px;
 } 
 
+.contact-box{
+    width: 100%;
+    max-width: 500px;
+}
+
 .contact-box input{
     padding: 7.5px 30px;
     background-color: lightgray;
-    width: 80%;
+    width: min(100%, 420px);
     height: 25px;
     border: none;
     outline : none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-sizing: border-box;
 }
 
 .contact-box button{
@@ -709,21 +761,26 @@ header ul a:hover{
 @media screen and (min-width: 701px){
     .contact-section .social-box,
     .contact-section .contact-box{
-        margin-top: 35px;
+        margin-top: 24px;
     }
 }
 
 .footer{
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    align-items: center;
+    position: relative;
     height: 70px;
     background-color: rgba(255, 255, 255, 0.121);
     z-index: 999;
     padding: 0 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.footer h1{
+    margin: 0;
 }
 
 
@@ -911,13 +968,14 @@ header ul a:hover{
     }
 
     .hero-info h1{
-        font-size: 40px;
-        max-width: 400px;
-        line-height: 40px;
+        font-size: 46px;
+        max-width: 520px;
+        line-height: 1.1;
     }
 
-    .hero-info P{
-        max-width: 300px;
+    .hero-info p{
+        max-width: 420px;
+        font-size: 18px;
     }
 
     .skills-video-box{
@@ -925,46 +983,122 @@ header ul a:hover{
     }
 
     .skills-video-box video{
-        height: 500px;
+        height: 620px;
     }
 
     .info-cards{
-        grid-template-columns: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .card:nth-child(3){
-        grid-column: span 2;
-        height: 70vh;
+        grid-column: 1 / -1;
+        grid-row: auto;
+        height: auto;
+        min-height: 460px;
     }
 
-    .info-cards .card h1{
-        font-size: 20px;
+    .card:nth-child(4){
+        grid-column: 1 / -1;
     }
 
-    .info-cards .card:nth-child(3) h1{
-        bottom: 25%;
+    .card:nth-child(3) p{
+        bottom: 10%;
     }
 
-    .card video{
-        height: 60%;
-
-        margin-top: 5%;
+    .card:nth-child(3) h1{
+        bottom: 20%;
     }
 
     .my-project{
-        margin-bottom: 200px;
-        scale: 0.8;
+        margin-top: 120px;
+        margin-bottom: 100px;
+        gap: 50px;
     }
 
-    .contact-section .section-title {
-        left: 30%;
+    .project-card{
+        gap: 30px;
+    }
+
+    .project-info h1{
+        font-size: 24px;
+        max-width: 100%;
+    }
+
+    .project-info p{
+        max-width: 100%;
+    }
+
+    .skills-box{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "image image"
+            "designer coder"
+            "slider slider";
+        align-items: start;
+        gap: 30px;
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    .skills-image{
+        grid-area: image;
+        width: min(760px, 95%);
+        justify-self: center;
+    }
+
+    .Designer{
+        grid-area: designer;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        max-width: none;
+        padding: 0 10px;
+    }
+
+    .coder{
+        grid-area: coder;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        max-width: none;
+        padding: 0 10px;
+    }
+
+    .Designer h1,
+    .coder h1{
+        font-size: 38px;
+        margin: 0 0 10px;
+    }
+
+    .slider{
+        grid-area: slider;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .contact-section{
+        width: 90%;
+    }
+
+    .contact-section .section-title{
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 @media screen and (max-width: 700px){
-    header {
+    header{
         position: fixed;
         height: 50px;
+        padding: 0 15px;
     }
 
     header ul{
@@ -979,7 +1113,7 @@ header ul a:hover{
         display: inline;
     }
 
-    .blackhole-box video {
+    .blackhole-box video{
         width: 100%;
         margin-top: -15%;
     }
@@ -987,152 +1121,218 @@ header ul a:hover{
     .autoBlur{
         animation: none;
     }
-    
+
     .hero{
         flex-direction: column;
-        top:0;
-        bottom: 0;
-        left: 0;
-        right:0;
-        
-    }
-    .hero-info{
-        bottom: 5%;
+        justify-content: flex-end;
+        padding: 80px 20px 40px;
+        min-height: 100vh;
     }
 
-    .scroll-down{
-        bottom: 5%;
+    .hero-info{
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 580px;
+    }
+
+    .hero-info .hero-info-title{
+        width: max-content;
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .hero-info h1{
+        font-size: clamp(30px, 8vw, 42px);
+        line-height: 1.15;
+        margin-top: 20px;
+    }
+
+    .hero-info p{
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 25px;
     }
 
     .hero .skills-video-box{
-        height: 200px;
-        top: 5%;
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
     }
 
-    .skills-box{
-        gap: 40px;
+    .skills-video{
+        height: min(280px, 45vh);
+        max-width: 100%;
     }
 
-    .Designer{
-        padding: 20px;
-        margin-bottom: 30px;
+    .scroll-down{
+        left: 50%;
+        bottom: 16px;
+        transform: translateX(-50%);
     }
-
-    .Designer h1{
-        margin-bottom: 15px;
-    }
-
-    .coder{
-        padding: 20px;
-        margin-bottom: 30px;
-    }
-
-    .coder h1{
-        margin-bottom: 15px;
-    }
-
-    .slider{
-        margin-top: 50px;
-    }
-
-
 
     .info-cards{
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
     }
 
-    .card:nth-child(3){
-        grid-column: span 2;
-        height: 70vh;
+    .card,
+    .card:nth-child(3),
+    .card:nth-child(4){
+        grid-column: auto;
+        grid-row: auto;
+        height: auto;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
+    .card h1,
+    .card p,
+    .card button{
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 0;
+    }
+
+    .card h1{
+        font-size: 22px;
+        max-width: 100%;
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: initial;
+    }
+
+    .card p{
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.45;
+        display: block;
+        overflow: visible;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: initial;
+    }
+
+    .card img,
     .card video{
         width: 100%;
-    }
-    
-    .container{
-        height: 100%;
-    }
-
-    .project-vidbox video{
-        width: 250px;
-        margin-left: -100px;
+        height: 220px;
+        margin-top: auto;
+        object-fit: cover;
+        border-radius: 12px;
     }
 
-    .project-info{
-        overflow: hidden;
-        padding-left: 0;
-        margin-left: -50px;
+    .card:nth-child(3) p,
+    .card:nth-child(3) h1,
+    .card:nth-child(4) p,
+    .card:nth-child(4) h1{
+        bottom: auto;
+        max-width: 100%;
     }
 
-    .project-info h1{
-        font-size: 20px;
-        max-width: 200px;
-        text-wrap: wrap;
-    }
-
-    .project-info p{
-        font-size: 10px;
-        text-wrap: wrap;
-        max-width: 200px;
-        min-width: 0;
-    }
-
-    .project-info button{
-        padding: 5px 10px;
+    .card button{
+        margin-top: 4px;
     }
 
     .my-project{
-        margin-bottom: 600px;
+        width: 90%;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        gap: 40px;
     }
 
     .project-card{
         flex-direction: column;
-        margin-left: 25%;
-        gap: 30px;
+        align-items: stretch;
+        min-height: 0;
+        gap: 20px;
+        margin-left: 0;
     }
-    
+
     .project-vidbox{
-        min-width: 200px;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .project-vidbox video{
+        width: 100%;
+        margin-left: 0;
     }
 
     .project-info{
-        width: 85%;
+        width: 100%;
+        padding-left: 0;
+        margin-left: 0;
+        overflow: visible;
     }
 
     .project-info h1{
-        text-wrap: nowrap;
+        font-size: 24px;
+        max-width: 100%;
+        text-wrap: balance;
     }
 
     .project-info p{
-        max-width: 300px;
+        font-size: 14px;
+        max-width: 100%;
+        min-width: 0;
+        margin-bottom: 20px;
     }
 
-    .Designer{
-        top: 15%;
-        left: 18%;
-        padding: 20px;
-        margin-bottom: 30px;
+    .project-info button{
+        padding: 10px 20px;
     }
 
-    .Designer h1{
-        margin-bottom: 15px;
-        margin-top: 70px;
+    .skills-section{
+        width: 90%;
     }
 
+    .skills-box{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "image"
+            "designer"
+            "coder"
+            "slider";
+        gap: 20px;
+        padding-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .skills-image{
+        width: 100%;
+        max-width: 520px;
+    }
+
+    .Designer,
     .coder{
-        top: 50%;
-        left: 18%;
-        padding: 20px;
-        margin-bottom: 30px;
+        padding: 0;
+        align-items: flex-start;
     }
 
+    .Designer h1,
     .coder h1{
-        margin-bottom: 15px;
+        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 8px;
     }
 
     .slider{
-        margin-top: 40px;
+        width: 100%;
+        margin-top: 0;
     }
 
     .slider .list .item img{
@@ -1140,138 +1340,147 @@ header ul a:hover{
     }
 
     .contact-section{
+        width: 90%;
         flex-direction: column;
-        margin-top: 100px;
-        margin-bottom: 50px;
+        align-items: stretch;
+        gap: 24px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 130px 0 40px;
     }
 
-    .footer{
-        font-size: 10px;
+    .contact-section .section-title{
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
     }
 
     .social-box{
-        margin-left: -90px;
+        margin-left: 0;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .social-box a{
+        font-size: 16px;
+        text-wrap: wrap;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-box{
+        width: 100%;
+        max-width: none;
+    }
+
+    .contact-box p{
+        max-width: 100%;
+    }
+
+    .contact-box input{
+        width: 100%;
+    }
+
+    .footer{
+        font-size: 12px;
+        padding: 12px 16px;
+        height: auto;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .footer h1{
+        margin: 0;
+        max-width: none;
+    }
+
+    .footer .box-icons{
+        gap: 12px;
     }
 }
 
 
 @media screen and (max-width: 480px) {
-
-    .hero .skills-video-box {
+    .hero .skills-video-box{
         display: none;
-        
     }
 
-    .blackhole-box {
+    .blackhole-box{
         overflow: hidden;
     }
 
-    .blackhole-box video {
+    .blackhole-box video{
         width: 140%;
         margin-top: -27%;
-
     }
 
-    .left {
+    .left{
         scale: 0.9;
-        margin-left: -30px;
+        margin-left: 0;
     }
 
-    .left h2 {
+    .left h2{
         font-size: 20px;
     }
 
-    .hero {
-        scale: 0.9;
-    }
-
-    .hero-info{
-        bottom: 15%;
+    .hero{
+        scale: 1;
     }
 
     .hero-info h1{
-        font-size: 35px;
+        font-size: 32px;
     }
 
     .scroll-down{
-        bottom: 15%;
-        left: 60%;
+        bottom: 12px;
     }
 
-    .section-title {
-        font-size: 25px;
+    .section-title{
+        font-size: clamp(24px, 7vw, 30px);
     }
 
-    .info-cards{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card {
-        min-height: 20rem;
+    .card{
+        min-height: 300px;
     }
 
     .card h1{
-        bottom: 30%;
-        font-size: 5px;
+        font-size: 20px;
     }
 
-    .project-card {
-        height: 50%;
-    }
-
-    .project-info p{
-        margin-bottom: 15px;
-    }
-
-    .project-info{
-        margin-left: -80px;
+    .project-card{
+        height: auto;
     }
 
     .skills-box{
-        height: 120vh;
-        margin-right: 30px;
-        gap: 30px;
+        min-height: auto;
+        height: auto;
+        gap: 16px;
     }
 
-    .Designer{
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-
+    .Designer,
     .coder{
-        padding: 15px;
-        margin-bottom: 20px;
+        padding: 0;
     }
 
     .slider{
-        bottom: 0%;
-        margin-top: 50px;
+        margin-top: 10px;
     }
 
     .contact-section{
-        scale: 0.9;
-        height: 120vh;
+        scale: 1;
+        min-height: auto;
+        height: auto;
     }
 
-    .contact-section .section-title {
-        top: -30px;
-        left: 25%;
-    }
-
-    .footer{
-        padding: 15px;
+    .contact-section .section-title{
+        top: 20px;
+        left: 50%;
     }
 
     .footer h1{
-        max-width: 150px;
+        max-width: 100%;
     }
-
-    .footer .box-icons{
-        gap: 10px;
-    }
-
-
 }
 
 
