@@ -706,6 +706,13 @@ header ul a:hover{
     box-shadow: 0 0 15px #72a1de81;
 }
 
+@media screen and (min-width: 701px){
+    .contact-section .social-box,
+    .contact-section .contact-box{
+        margin-top: 35px;
+    }
+}
+
 .footer{
     display: flex;
     justify-content: space-between;
