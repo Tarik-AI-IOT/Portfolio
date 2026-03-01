@@ -675,14 +675,14 @@ header ul a:hover{
   /* CONTACT SECTION */
 .contact-section{
     width: 80%;
-    min-height: 100vh;
+    min-height: 0;
     height: auto;
     display: flex;
     justify-content: center;
     gap: clamp(30px, 6vw, 90px);
     align-items: center;
     position: relative;
-    padding: 140px 0 80px;
+    padding: 140px 0 24px;
     box-sizing: border-box;
 }
 
@@ -779,7 +779,7 @@ header ul a:hover{
     padding: 0 3rem;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .footer h1{
@@ -964,6 +964,40 @@ header ul a:hover{
     }
 }
 
+@media screen and (min-width: 1201px){
+    .skills-section{
+        width: 90%;
+    }
+
+    .skills-box{
+        max-width: 1280px;
+        margin: 0 auto;
+        grid-template-columns: minmax(220px, 0.9fr) minmax(500px, 1.8fr) minmax(220px, 0.9fr);
+        grid-template-areas:
+            "designer image coder"
+            "slider slider slider";
+        align-items: center;
+        column-gap: clamp(30px, 4vw, 70px);
+        row-gap: 28px;
+    }
+
+    .skills-image{
+        width: min(100%, 860px);
+    }
+
+    .Designer,
+    .coder{
+        max-width: 320px;
+        justify-self: center;
+    }
+
+    .slider{
+        width: min(100%, 980px);
+        justify-self: center;
+        margin-top: 0;
+    }
+}
+
 
 @media screen and (max-width: 1200px){
     .blackhole-box video{
@@ -1127,8 +1161,8 @@ header ul a:hover{
 
     .hero{
         flex-direction: column;
-        justify-content: flex-end;
-        padding: 80px 20px 40px;
+        justify-content: center;
+        padding: 78px 20px 34px;
         min-height: 100vh;
     }
 
@@ -1138,6 +1172,7 @@ header ul a:hover{
         bottom: auto;
         width: 100%;
         max-width: 580px;
+        margin-top: 0;
     }
 
     .hero-info .hero-info-title{
@@ -1160,13 +1195,7 @@ header ul a:hover{
     }
 
     .hero .skills-video-box{
-        position: relative;
-        right: auto;
-        top: auto;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
+        display: none;
     }
 
     .skills-video{
@@ -1348,8 +1377,8 @@ header ul a:hover{
         align-items: stretch;
         gap: 24px;
         margin-top: 40px;
-        margin-bottom: 40px;
-        padding: 130px 0 40px;
+        margin-bottom: 8px;
+        padding: 130px 0 24px;
     }
 
     .contact-section .section-title{
