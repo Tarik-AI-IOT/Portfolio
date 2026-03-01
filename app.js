@@ -6,6 +6,7 @@ const video3 = document.getElementById('projectVideo3');
 const sideBar = document.querySelector('.sidebar');
 const menu = document.querySelector('.menu-icon');
 const closeIcon = document.querySelector('.close-icon')
+const sidebarLinks = document.querySelectorAll('.sidebar ul a');
 
 
 const hoverSign = document.querySelector('.hover-sign');
@@ -25,6 +26,11 @@ videoList.forEach (function(video){
 })
 })
 
+function closeSidebar() {
+    sideBar.classList.remove("open-sidebar");
+    sideBar.classList.add("close-sidebar");
+}
+
 // Sidebar elements //
 menu.addEventListener("click", function(){
     sideBar.classList.remove("close-sidebar")
@@ -32,10 +38,14 @@ menu.addEventListener("click", function(){
 });
 
 closeIcon.addEventListener("click", function(){
-    sideBar.classList.remove("open-sidebar");
-    sideBar.classList.add("close-sidebar");
-    
+    closeSidebar();
 })
+
+sidebarLinks.forEach(function(link){
+    link.addEventListener("click", function(){
+        closeSidebar();
+    });
+});
 
 if (contactForm && contactStatus) {
     contactForm.addEventListener("submit", async function(event){
