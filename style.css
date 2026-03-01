@@ -394,6 +394,14 @@ header ul a:hover{
     bottom: 35%;
 }
 
+@media screen and (min-width: 1201px){
+    .info-cards .card:nth-child(3) video{
+        object-fit: contain;
+        width: 92%;
+        height: 60%;
+    }
+}
+
 
 .my-project{
     display: flex;
