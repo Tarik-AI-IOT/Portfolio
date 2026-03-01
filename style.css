@@ -729,44 +729,106 @@ header ul a:hover{
     margin-top: 40px;
 }
 
-.contact-box p{
-    max-width: 400px;
-    margin-top: 30px;
-    margin-bottom: 5px;
-} 
-
 .contact-box{
     width: 100%;
-    max-width: 500px;
-}
-
-.contact-box input{
-    padding: 7.5px 30px;
-    background-color: lightgray;
-    width: min(100%, 420px);
-    height: 25px;
-    border: none;
-    outline : none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    max-width: 560px;
+    padding: 26px 24px 24px;
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(13, 19, 56, 0.78), rgba(9, 15, 44, 0.58));
+    border: 1px solid rgba(114, 161, 222, 0.35);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28), inset 0 0 22px rgba(114, 161, 222, 0.12);
+    backdrop-filter: blur(10px);
     box-sizing: border-box;
 }
 
+.contact-lead{
+    margin: 0 0 18px;
+    color: #d7e6ff;
+    line-height: 1.6;
+    max-width: 95%;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.field-group{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-group span{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #9ec5ff;
+    font-weight: 700;
+}
+
+.field-group input,
+.field-group textarea{
+    width: 100%;
+    padding: 13px 14px;
+    font-family: inherit;
+    color: #f4f8ff;
+    background: rgba(10, 17, 48, 0.78);
+    border: 1px solid rgba(114, 161, 222, 0.45);
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+    box-sizing: border-box;
+}
+
+.field-group input::placeholder,
+.field-group textarea::placeholder{
+    color: #95a7c6;
+}
+
+.field-group input:focus,
+.field-group textarea:focus{
+    border-color: #8bb7ff;
+    box-shadow: 0 0 0 2px rgba(114, 161, 222, 0.28), 0 0 18px rgba(114, 161, 222, 0.2);
+    background-color: rgba(12, 21, 58, 0.92);
+}
+
+.field-message textarea{
+    min-height: 136px;
+    resize: vertical;
+    line-height: 1.45;
+}
+
 .contact-box button{
-    margin-top: 30px;
+    margin-top: 6px;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: white;
-    padding: 15px 35px;
-    border-radius: 10px;
-    border: 1px solid #72a1de81;
-    background-color: #2200493d;
-    box-shadow: 0 0 5px #72a1de81;
+    padding: 13px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(114, 161, 222, 0.62);
+    background: linear-gradient(120deg, rgba(29, 51, 122, 0.42), rgba(35, 0, 73, 0.45));
+    box-shadow: 0 0 10px rgba(114, 161, 222, 0.34);
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.2s, box-shadow 0.3s, opacity 0.3s;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .contact-box button:hover{
-    opacity: 0.8;
-    box-shadow: 0 0 15px #72a1de81;
+    transform: translateY(-2px);
+    opacity: 0.95;
+    box-shadow: 0 0 18px rgba(114, 161, 222, 0.62);
 }
 
 @media screen and (min-width: 701px){
@@ -1411,14 +1473,36 @@ header ul a:hover{
     .contact-box{
         width: 100%;
         max-width: none;
+        padding: 20px 16px 18px;
     }
 
-    .contact-box p{
+    .contact-lead{
         max-width: 100%;
+        margin-bottom: 14px;
     }
 
-    .contact-box input{
+    .contact-grid{
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .field-group span{
+        font-size: 11px;
+    }
+
+    .field-group input,
+    .field-group textarea{
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .field-message textarea{
+        min-height: 120px;
+    }
+
+    .contact-box button{
         width: 100%;
+        justify-content: center;
     }
 
     .footer{

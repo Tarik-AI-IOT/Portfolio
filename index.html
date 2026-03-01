@@ -204,18 +204,28 @@
             </div>
 
             <div class="contact-box autoBlur">
-                <p>Whether you're looking to build a new website, improve your existing platform, or bring a unique project to life, I'm here to help.</p>
-            
-                <p>Full Name</p>
-                <input type="text" placeholder="Your Full Name">
+                <p class="contact-lead">Whether you're looking to build a new website, improve your existing platform, or bring a unique project to life, I'm here to help.</p>
 
-                <p>Email Address</p>
-                <input type="email" placeholder="Your Email">
+                <form class="contact-form" action="https://formspree.io/f/xeelwazy" method="POST">
+                    <div class="contact-grid">
+                        <label class="field-group">
+                            <span>Full Name</span>
+                            <input type="text" name="name" placeholder="Your Full Name" required>
+                        </label>
 
-                <p>Your Message</p>
-                <input  class="input-message" type="contact" placeholder="share your thoughts...">
+                        <label class="field-group">
+                            <span>Email Address</span>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </label>
+                    </div>
 
-                <button>Send Message <i class='bx bx-mail-send'></i></button>
+                    <label class="field-group field-message">
+                        <span>Your Message</span>
+                        <textarea class="input-message" name="message" placeholder="Share your thoughts..."></textarea>
+                    </label>
+
+                    <button type="submit">Send Message <i class='bx bx-mail-send'></i></button>
+                </form>
             </div>
         
         </section> 
