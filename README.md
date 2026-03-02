@@ -4,6 +4,8 @@
 
 # Tarik Antar | Full-Stack Developer Portfolio 🌐
 
+🚀 **Live Website:** https://www.tarikantar.com
+
 Welcome to my personal portfolio website! This is the place where I showcase my journey as a **Full-Stack Developer**, specializing in **AI**, **IoT**, and modern web and mobile applications.
 
 ---
