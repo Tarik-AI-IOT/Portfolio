@@ -1360,6 +1360,19 @@ header ul a:hover{
         animation: none;
     }
 
+    .fadein-left{
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+    .project-info{
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
     .hero{
         flex-direction: column;
         justify-content: center;
