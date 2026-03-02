@@ -411,7 +411,7 @@ header ul a:hover{
     position: relative;
     width: 80%;
     height: auto;
-    margin-top: 150px;
+    margin-top: 110px;
     margin-bottom: 120px;
 }
 
@@ -1248,7 +1248,7 @@ header ul a:hover{
     }
 
     .my-project{
-        margin-top: 120px;
+        margin-top: 80px;
         margin-bottom: 100px;
         gap: 50px;
     }
@@ -1494,7 +1494,7 @@ header ul a:hover{
 
     .my-project{
         width: 90%;
-        margin-top: 24px;
+        margin-top: 8px;
         margin-bottom: 80px;
         gap: 40px;
     }
