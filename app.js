@@ -20,6 +20,7 @@ function prepareInlineVideo(video) {
     video.muted = true;
     video.controls = false;
     video.playsInline = true;
+    video.preload = "auto";
     video.setAttribute("muted", "");
     video.setAttribute("playsinline", "");
     video.setAttribute("webkit-playsinline", "");
@@ -42,13 +43,13 @@ if (isTouchDevice) {
     if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
-                if (entry.isIntersecting && entry.intersectionRatio > 0.45) {
+                if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
                     safePlay(entry.target);
                 } else {
                     entry.target.pause();
                 }
             });
-        }, { threshold: [0.1, 0.45, 0.8] });
+        }, { rootMargin: "160px 0px", threshold: [0.05, 0.2, 0.5] });
 
         projectVideos.forEach(function (video) {
             observer.observe(video);
@@ -87,12 +88,20 @@ const autoPlayVideos = Array.from(document.querySelectorAll("video[autoplay]"));
 autoPlayVideos.forEach(prepareInlineVideo);
 
 function kickstartAutoPlayVideos() {
-    autoPlayVideos.forEach(safePlay);
+    autoPlayVideos.forEach(function (video) {
+        if (video.paused) {
+            safePlay(video);
+        }
+    });
 }
 
 kickstartAutoPlayVideos();
+setTimeout(kickstartAutoPlayVideos, 300);
+setTimeout(kickstartAutoPlayVideos, 1200);
+setTimeout(kickstartAutoPlayVideos, 2500);
 window.addEventListener("pointerdown", kickstartAutoPlayVideos, { once: true, passive: true });
 window.addEventListener("touchstart", kickstartAutoPlayVideos, { once: true, passive: true });
+window.addEventListener("pageshow", kickstartAutoPlayVideos);
 
 document.addEventListener("visibilitychange", function () {
     if (!document.hidden) {
